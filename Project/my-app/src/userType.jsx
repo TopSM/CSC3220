@@ -8,14 +8,12 @@ function userType() {
     <div className="userType">
       <header className="userType-header">
       <div className= "Buttons">
-      {//	<h1>Are you a new user? </h1>
-      }	<Link to ="/login" >
+      <Link to ="/login" >
       		<Button> Click for new user </Button>
       	</Link>
        <Link to ="/Menu" >
           <Button> Click to continue </Button>
       </Link>
-      if (true) {}
       </div>
       </header>
     </div>
