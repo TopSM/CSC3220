@@ -6,11 +6,12 @@ import { Navbar, Nav } from "react-bootstrap";
 const Navigation = ({ history }) => (
   <div>
     {/*variant can only be changed from light,dark,white*/}
-    <Navbar className="custom-nav" variant="dark" /*bg="warning" expand="lg"*/>
-      <Navbar.Brand href="#home">
-        <Link to="/">
-          {//<img src={logo} alt="IYC Logo" height="60px" />
-        }</Link>
+    <Navbar variant="dark" bg="dark" expand="lg">
+      <Navbar.Brand href="/">
+        Meal Runner
+        {
+          //<img src={logo} alt="IYC Logo" height="60px" />
+        }
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse className="justify-content-end" id="basic-navbar-nav">

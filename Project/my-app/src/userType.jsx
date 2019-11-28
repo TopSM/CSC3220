@@ -1,20 +1,23 @@
-import React from 'react';
-import './App.css';
-import { Button } from 'react-bootstrap';
+import React from "react";
+import "./App.css";
+import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 function userType() {
   return (
     <div className="userType">
       <header className="userType-header">
-      <div className= "Buttons">
-      <Link to ="/login" >
-      		<Button> Click for new user </Button>
-      	</Link>
-       <Link to ="/Menu" >
-          <Button> Click to continue </Button>
-      </Link>
-      </div>
+        <div className="Buttons">
+          <Link to="/login">
+            <Button> Click for new user </Button>
+          </Link>
+          <Link to="/Menu">
+            <Button> Click to continue </Button>
+          </Link>
+          <Link to="/manager">
+            <Button>Click for manager</Button>
+          </Link>
+        </div>
       </header>
     </div>
   );
