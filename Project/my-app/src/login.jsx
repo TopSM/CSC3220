@@ -27,7 +27,7 @@ export default class Login extends Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <FormGroup controlId="Username" bsSize="large">
-          <FormLabel>UserName</FormLabel>
+          <FormLabel>Username</FormLabel>
           <FormControl
             autoFocus
             type="username"
@@ -57,7 +57,7 @@ export default class Login extends Component {
             placeholder="Enter Password"
           />
         </FormGroup>
-
+  
         <FormGroup controlId="confirmPassword" bsSize="large">
           <FormLabel>Confirm Password</FormLabel>
           <FormControl
