@@ -3,36 +3,36 @@ import SellerInfoCard from '../SellerAccount/Info';
 import OrderList from './Orders/OrderList';
 
 import MenuItemBox from './MenuItems/MenuItemBox';
-class SellerAccount extends Component{
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
-  }
+class SellerAccount extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {};
+	}
 
-  componentDidMount(){
+	componentDidMount() {}
+	render() {
+		return (
+			<div>
+				<header>
+					<center>
+						<h1>Welcome</h1>
+					</center>
+				</header>
 
-  }
-  render(){
-    return(
-      <div>
+				<center>
+					<SellerInfoCard style={{ backgroundColor: 'red' }} />
+				</center>
 
-        <header>
-          <center><h1>Welcome</h1></center>
-        </header>
+				<h1 style={{ margin: 50 }}>Orders</h1>
+				<OrderList />
+				<MenuItemBox style={{ margin: 50 }} />
 
-        <center>
-           <SellerInfoCard style={{backgroundColor:'red'}}/>
-        </center>
-
-        <h1 style={{margin:50}}>Orders</h1>
-        <OrderList />
-        <MenuItemBox style={{margin:50}}/>
-
-        <br/><br/><br/>
-        {/* <ButtonExampleSocial/>*/}
-      </div>
-    )
-  }
+				<br />
+				<br />
+				<br />
+				{/* <ButtonExampleSocial/>*/}
+			</div>
+		);
+	}
 }
 export default SellerAccount;
