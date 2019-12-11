@@ -51,7 +51,7 @@ class App extends Component {
     return (
       <MuiThemeProvider>
         <AppBar
-          style={{ backgroundColor: "#db2828" }}
+          style={{ backgroundColor: "#800020" }}
           title="Meal Runner"
           iconElementRight={this.props.logged ? <LoggedInMenu /> : <Login />}
           onLeftIconButtonClick={this.handleToggle}

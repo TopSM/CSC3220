@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
-import { Divider, Button,Segment} from 'semantic-ui-react';
-import { getOrderInfo, updateOrderStatus } from '../../../../Utils/storeData';
-import StatusComplete from './OrderStatus/StatusComplete';
-import StatusNotComplete from './OrderStatus/StatusNotComplete';
-import OrderItemName from './OrderItemName';
+import React, { Component } from "react";
+import { Divider, Button, Segment } from "semantic-ui-react";
+import { getOrderInfo, updateOrderStatus } from "../../../../Utils/storeData";
+import StatusComplete from "./OrderStatus/StatusComplete";
+import StatusNotComplete from "./OrderStatus/StatusNotComplete";
+import OrderItemName from "./OrderItemName";
 
 class OrderItem extends Component {
   constructor(props) {
@@ -14,7 +14,7 @@ class OrderItem extends Component {
       orderPrepping: false,
       outForDelivery: false,
       delivered: false
-    }
+    };
     this.completeStatus = this.completeStatus.bind(this);
     this.updateOrderPrepping = this.updateOrderPrepping.bind(this);
     this.updateOutForDelivery = this.updateOutForDelivery.bind(this);
@@ -22,30 +22,21 @@ class OrderItem extends Component {
   }
 
   updateOrderPrepping() {
-    this.setState(
-      {orderPrepping: true},
-      () => {
-        this.completeStatus();
-      }
-    );
+    this.setState({ orderPrepping: true }, () => {
+      this.completeStatus();
+    });
   }
 
   updateOutForDelivery() {
-    this.setState(
-      {outForDelivery: true},
-      () => {
-        this.completeStatus();
-      }
-    );
+    this.setState({ outForDelivery: true }, () => {
+      this.completeStatus();
+    });
   }
 
   updateDelivered() {
-    this.setState(
-      {delivered: true},
-      () => {
-        this.completeStatus();
-      }
-    );
+    this.setState({ delivered: true }, () => {
+      this.completeStatus();
+    });
   }
 
   completeStatus() {
@@ -56,8 +47,8 @@ class OrderItem extends Component {
       orderPrepping: this.state.orderPrepping,
       outForDelivery: this.state.outForDelivery,
       delivered: this.state.delivered
-    }
-    updateOrderStatus(api_token, orderID, orderStatus)
+    };
+    updateOrderStatus(api_token, orderID, orderStatus);
   }
 
   componentDidMount() {
@@ -73,22 +64,24 @@ class OrderItem extends Component {
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
   render() {
     return (
       <Segment>
-        {this.state.foodItems.map((foodItem, i) =>
-          <OrderItemName key={i} id={foodItem}/>
-        )}
+        {this.state.foodItems.map((foodItem, i) => (
+          <OrderItemName key={i} id={foodItem} />
+        ))}
         <div>
           <div>
             Order Received:
-            {this.state.orderReceived  ? (
+            {this.state.orderReceived ? (
               <StatusComplete />
             ) : (
-              <span><StatusNotComplete /></span>
+              <span>
+                <StatusNotComplete />
+              </span>
             )}
           </div>
           <div>
@@ -98,7 +91,12 @@ class OrderItem extends Component {
             ) : (
               <span>
                 <StatusNotComplete />
-                <Button onClick={this.updateOrderPrepping} positive size='tiny' content='Complete' />
+                <Button
+                  onClick={this.updateOrderPrepping}
+                  positive
+                  size="tiny"
+                  content="Complete"
+                />
               </span>
             )}
           </div>
@@ -109,7 +107,12 @@ class OrderItem extends Component {
             ) : (
               <span>
                 <StatusNotComplete />
-                <Button onClick={this.updateOutForDelivery} positive size='tiny' content='Complete' />
+                <Button
+                  onClick={this.updateOutForDelivery}
+                  positive
+                  size="tiny"
+                  content="Complete"
+                />
               </span>
             )}
           </div>
@@ -120,14 +123,19 @@ class OrderItem extends Component {
             ) : (
               <span>
                 <StatusNotComplete />
-                <Button onClick={this.updateDelivered} positive size='tiny' content='Complete' />
+                <Button
+                  onClick={this.updateDelivered}
+                  positive
+                  size="tiny"
+                  content="Complete"
+                />
               </span>
             )}
           </div>
         </div>
-        <Divider segment/>
+        <Divider segment />
       </Segment>
-    )
+    );
   }
 }
 

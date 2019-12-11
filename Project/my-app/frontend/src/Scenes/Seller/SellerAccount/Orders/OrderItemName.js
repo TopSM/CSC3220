@@ -1,28 +1,26 @@
-import React, { Component } from 'react';
-import { getFoodItem } from '../../../../Utils/storeData';
+import React, { Component } from "react";
+import { getFoodItem } from "../../../../Utils/storeData";
 
 class OrderItemName extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: ''
-    }
+      name: ""
+    };
   }
 
   componentDidMount() {
     getFoodItem(this.props.id)
       .then(res => {
-        this.setState({name: res.data.data.name});
+        this.setState({ name: res.data.data.name });
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
   render() {
-    return (
-      <div>{this.state.name}</div>
-    )
+    return <div>{this.state.name}</div>;
   }
 }
 

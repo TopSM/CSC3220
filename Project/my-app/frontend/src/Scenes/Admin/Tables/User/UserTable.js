@@ -1,44 +1,38 @@
-import React, { Component } from 'react';
-import UserRow from './UserRow';
+import React, { Component } from "react";
+import UserRow from "./UserRow";
 
-import { Table } from 'semantic-ui-react'
+import { Table } from "semantic-ui-react";
 
-class UserTable extends Component{
+class UserTable extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      users : this.props.users
+      users: this.props.users
     };
-
   }
 
-
-  render(){
-
-    
-    return(
+  render() {
+    return (
       <div>
-      <Table celled>
-        <Table.Header>
-          <Table.Row>
-            <Table.HeaderCell>User Name</Table.HeaderCell>
-            <Table.HeaderCell>Name</Table.HeaderCell>
-            <Table.HeaderCell>Email</Table.HeaderCell>
-            <Table.HeaderCell>_id</Table.HeaderCell>
-            <Table.HeaderCell>Orders</Table.HeaderCell>
-            <Table.HeaderCell>Created Date</Table.HeaderCell>
-            <Table.HeaderCell>Admin</Table.HeaderCell>
-
-          </Table.Row>
-        </Table.Header>
-        {
-                this.props.users.map(function(user) {
-                    return <UserRow user={user}/>
-                })
-            }
-      </Table>
+        <Table celled>
+          <Table.Header>
+            <Table.Row>
+              <Table.HeaderCell>User Name</Table.HeaderCell>
+              <Table.HeaderCell>Name</Table.HeaderCell>
+              <Table.HeaderCell>Email</Table.HeaderCell>
+              <Table.HeaderCell>_id</Table.HeaderCell>
+              <Table.HeaderCell>Orders</Table.HeaderCell>
+              <Table.HeaderCell>Created Date</Table.HeaderCell>
+              <Table.HeaderCell>Admin</Table.HeaderCell>
+              <Table.HeaderCell>Type</Table.HeaderCell>
+            </Table.Row>
+          </Table.Header>
+          {this.props.users.map(function(user) {
+            return <UserRow user={user} />;
+          })}
+        </Table>
       </div>
-    )
+    );
   }
 }
 export default UserTable;
